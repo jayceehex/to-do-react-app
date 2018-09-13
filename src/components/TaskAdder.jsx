@@ -50,20 +50,20 @@ class TaskAdder extends Component {
 
     render() {
         return (
-            <form onSubmit={ this.handleSubmit }>
+            <form onSubmit={ this.handleSubmit } className="form-group">
                 <div>
-                    <label>Title</label>
-                    <input onChange={ this.handleTitleChange } value={ this.state.titleValue } />
+                    <label htmlFor="title" className="form-text">Title</label>
+                    <input required id="title" type="text" className="form-control" onChange={ this.handleTitleChange } value={ this.state.titleValue } />
                 </div>
                 <div>
-                    <label>Due Date</label>
-                    <input onChange={ this.handleDueDateChange }value={ this.state.dueDateValue } />
+                    <label htmlFor="duedate">Due Date</label>
+                    <input id="duedate" type="" className="form-control" onChange={ this.handleDueDateChange } value={ this.state.dueDateValue } />
                 </div>
                 <div>
-                    <label>Notes</label>
-                    <input onChange={ this.handleNotesChange } value={ this.state.notesValue } />
+                    <label htmlFor="notes">Notes</label>
+                    <input id="notes" type="text" className="form-control" onChange={ this.handleNotesChange } value={ this.state.notesValue } />
                 </div>
-                <button>Add Task</button>
+                <button disabled={ this.state.titleValue ? false : true } type="submit" className="btn btn-primary">Add Task</button>
             </form>
         );
     }

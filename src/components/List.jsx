@@ -4,7 +4,7 @@ import ListItem from './ListItem';
 class List extends Component {
     render () {
         return (
-            <ul>
+            <ul className="list-group">
                 {
                     Object.values(this.props.tasks).map((task, index) => (
                         <ListItem

@@ -53,22 +53,22 @@ class TaskEditor extends Component {
         return (
             <form onSubmit={ (e) => this.handleSubmit(e) }>
                 <div>
-                    <label>Title</label>
-                    <input onChange={ (e) => this.handleTitleChange(e) } value={ this.state.titleValue } />
+                    <label htmlFor="title" className="form-text">Title</label>
+                    <input required id="title" type="text" className="form-control" onChange={ (e) => this.handleTitleChange(e) } value={ this.state.titleValue } />
                 </div>
                 <div>
-                    <label>Due Date</label>
-                    <input onChange={ (e) => this.handleDueDateChange(e) }value={ this.state.dueDateValue } />
+                    <label htmlFor="duedate" className="form-text">Due Date</label>
+                    <input id="duedate" type="" className="form-control" onChange={ (e) => this.handleDueDateChange(e) }value={ this.state.dueDateValue } />
                 </div>
                 <div>
-                    <label>Notes</label>
-                    <input onChange={ (e) => this.handleNotesChange(e) } value={ this.state.notesValue } />
+                    <label htmlFor="notes" className="form-text">Notes</label>
+                    <input id="notes" type="text" className="form-control" onChange={ (e) => this.handleNotesChange(e) } value={ this.state.notesValue } />
                 </div>
                 <div>
-                    <label>Completed</label>
-                    <input onChange={ (e) => this.handleCompletedChange(e) } value={ this.state.completedValue } />
+                    <span className="form-text">Completed</span>
+                    <button type="button" id="completed" onChange={ (e) => this.handleCompletedChange(e) } value={ this.state.completedValue } />
                 </div>
-                <button>Edit Task</button>
+                <button type="submit" className="btn btn-primary">Edit Task</button>
             </form>
         )
     }
