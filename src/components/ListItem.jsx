@@ -6,10 +6,10 @@ class ListItem extends Component {
     // }
 
     render () {
-        let {id, title, notes, dueDate, completed} = this.props;
+        let {id, title, notes, dueDate, completed, onClick} = this.props;
         return (
             <li>
-                <button>button</button>
+                <button onClick={ onClick }>button</button>
                 <span>{title}</span>
             </li>
         )

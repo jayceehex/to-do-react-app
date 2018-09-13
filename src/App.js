@@ -5,7 +5,9 @@ import List from './containers/List'
 class App extends Component {
   render() {
     return (
-      <List />
+      <React.Fragment>
+        <List />
+      </React.Fragment>
     );
   }
 }
