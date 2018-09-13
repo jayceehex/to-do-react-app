@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import TaskEditor from '../components/TaskEditor';
 
 class Details extends Component {
     constructor(props) {
@@ -8,10 +9,13 @@ class Details extends Component {
     render() {
         return (
             <React.Fragment>
-                <p>{ this.props.notes }</p>
-                <p>{ this.props.dueDate }</p>
-                <button>Edit</button>
-                <button onClick={ this.props.onDelete }>Delete</button>
+                <div>
+                    <p>{ this.props.taskData.notes }</p>
+                    <p>{ this.props.taskData.dueDate }</p>
+                    <button>Edit</button>
+                    <button onClick={ this.props.taskData.onDelete }>Delete</button>
+                </div>
+                <TaskEditor taskData={ this.props.taskData } />
             </React.Fragment>
         ); 
     }

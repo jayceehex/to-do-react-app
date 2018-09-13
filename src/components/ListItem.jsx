@@ -13,10 +13,13 @@ class ListItem extends Component {
                 <button onClick={ onClick }>button</button>
                 <span>{title}</span>
                 <Details 
-                    id={ id }
-                    notes={ notes }
-                    dueDate={ dueDate }
-                    onDelete={ onDelete }
+                    // id={ id }
+                    // title={ title }
+                    // notes={ notes }
+                    // dueDate={ dueDate }
+                    // completed={ completed }
+                    // onDelete={ onDelete }
+                    taskData={ this.props }
                 />
             </li>
         )

@@ -18,3 +18,10 @@ export const addTask = (data) => {
         data: data
     }
 }
+
+export const editTask = (data) => {
+    return {
+        type: 'editTask',
+        data: data
+    }
+}

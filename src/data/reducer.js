@@ -34,11 +34,24 @@ const addTask = (state, data) => {
     return newState;
 }
 
+const editTask = (state, data) => {
+    let newState = {...state};
+    newState = {
+        ...newState,
+        tasks: {
+            ...newState.tasks,
+            [data.id]: data
+        }
+    }
+    return newState;
+}
+
 const reducer = (state, action) => {
     switch (action.type) {
         case 'completeTask': return completeTask(state, action.id);
         case 'deleteTask': return deleteTask(state, action.id);
         case 'addTask': return addTask(state, action.data);
+        case 'editTask': return editTask(state, action.data);
         default: return state;
     }
 }
