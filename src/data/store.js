@@ -1,6 +1,6 @@
 import initial from './initial';
 import reducer from './reducer';
-import { createStore } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
 
 const store = createStore(
     reducer,

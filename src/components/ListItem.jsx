@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import Details from './Details';
 
 class ListItem extends Component {
     // constructor(props) {
@@ -6,11 +7,17 @@ class ListItem extends Component {
     // }
 
     render () {
-        let {id, title, notes, dueDate, completed, onClick} = this.props;
+        let {id, title, notes, dueDate, completed, onClick, onDelete} = this.props;
         return (
-            <li>
+            <li key={ id }>
                 <button onClick={ onClick }>button</button>
                 <span>{title}</span>
+                <Details 
+                    id={ id }
+                    notes={ notes }
+                    dueDate={ dueDate }
+                    onDelete={ onDelete }
+                />
             </li>
         )
     }

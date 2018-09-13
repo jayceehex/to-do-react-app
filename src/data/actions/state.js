@@ -4,3 +4,17 @@ export const completeTask = (id) => {
         id: id
     }
 }
+
+export const deleteTask = (id) => {
+    return {
+        type: 'deleteTask',
+        id: id
+    }
+}
+
+export const addTask = (data) => {
+    return {
+        type: 'addTask',
+        data: data
+    }
+}
