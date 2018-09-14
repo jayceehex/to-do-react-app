@@ -2,6 +2,10 @@ import React, {Component} from 'react';
 import ListItem from './ListItem';
 
 class List extends Component {
+    componentDidMount() {
+        this.props.onLoad();
+    }
+    
     render () {
         return (
             <ul className="list-group">
