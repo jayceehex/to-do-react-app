@@ -58,19 +58,19 @@ class TaskEditor extends Component {
     render() {
         return (
             <form onSubmit={ (e) => this.handleSubmit(e) }>
-                <div>
+                <div className="form-group">
                     <label htmlFor="title" className="form-text">Title</label>
                     <input required id="title" type="text" className="form-control" onChange={ (e) => this.handleTitleChange(e) } value={ this.state.titleValue } />
                 </div>
-                <div>
+                <div className="form-group">
                     <label htmlFor="duedate" className="form-text">Due Date</label>
                     <input id="duedate" type="" className="form-control" onChange={ (e) => this.handleDueDateChange(e) } value={ this.state.dueDateValue } />
                 </div>
-                <div>
+                <div className="form-group">
                     <label htmlFor="notes" className="form-text">Notes</label>
                     <input id="notes" type="text" className="form-control" onChange={ (e) => this.handleNotesChange(e) } value={ this.state.notesValue } />
                 </div>
-                <button type="submit" className="btn btn-primary">Edit Task</button>
+                <button type="submit" className="btn btn-success btn-block">Save Task</button>
             </form>
         )
     }
