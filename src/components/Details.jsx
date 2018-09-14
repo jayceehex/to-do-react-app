@@ -20,7 +20,8 @@ class Details extends Component {
     render() {
         return (
             <React.Fragment>
-                <div className="">
+                <div className="my-2">
+                    <hr />
                     <p>{ this.props.taskData.notes }</p>
                     { this.props.taskData.dueDate ? <p className="text-muted">{ moment(this.props.taskData.dueDate).calendar()}</p> : null }
                     <div className="btn-group">

@@ -14,7 +14,6 @@ const setTaskList = (state, tasks) => {
 }
 
 const completeTask = (state, response) => {
-    console.log(response);
     let newState = {
         ...state,
         tasks: {

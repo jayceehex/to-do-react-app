@@ -21,10 +21,10 @@ class ListItem extends Component {
         let {id, title, notes, dueDate, completed, onClick, onDelete} = this.props;
         return (
             <li key={ id } className={"list-group-item" + (this.props.completed ? " disabled" : "")}>
-                <div className="d-flex justify-content-between">
-                    <button className={"btn btn-sm " + (this.props.completed ? "disabled" : "btn-outline-success")} onClick={ onClick }>complete</button>
-                    <span className="">{title}</span>
-                    <button className={"btn btn-sm " + (this.props.completed ? "btn-secondary disabled" : "btn-dark")} onClick={ this.handleDetailToggle }>expand</button>
+                <div className="py-1">
+                    <button className={"mx-1 btn btn-sm " + (this.props.completed ? "disabled" : "btn-outline-success")} onClick={ onClick }>complete</button>
+                    <span className="mx-1">{title}</span>
+                    <button className={"mx-1 float-right btn btn-sm " + (this.props.completed ? "btn-secondary disabled" : "btn-dark")} onClick={ this.handleDetailToggle }>expand</button>
                 </div>
                 { this.state.detailsHidden ? null : (<Details taskData={ this.props }/>) }
             </li>
