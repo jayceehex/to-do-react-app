@@ -10,6 +10,7 @@ class List extends Component {
         return (
             <ul className="list-group">
                 {
+                    Object.values(this.props.tasks).length ? (
                     Object.values(this.props.tasks).map((task, index) => (
                         <ListItem
                             id={task.id}
@@ -22,7 +23,9 @@ class List extends Component {
                             onDelete={ () => this.props.onDelete(task.id) }
                             onEdit={ this.props.onEdit }
                         />
-                    ))
+                    ))) : (
+                        <p className="text-muted text-center">No tasks yet!</p>
+                    )
                 }
             </ul>
         )
