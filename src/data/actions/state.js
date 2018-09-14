@@ -1,21 +1,21 @@
-export const completeTask = (id) => {
+export const completeTask = (response) => {
     return {
         type: 'completeTask',
-        id: id
+        response: response
     }
 }
 
-export const deleteTask = (id) => {
+export const removeTask = (id) => {
     return {
-        type: 'deleteTask',
+        type: 'removeTask',
         id: id
     }
 }
 
-export const addTask = (data) => {
+export const addTask = (task) => {
     return {
         type: 'addTask',
-        data: data
+        task: task
     }
 }
 

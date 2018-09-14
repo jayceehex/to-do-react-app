@@ -1,10 +1,10 @@
 import { connect } from 'react-redux';
 import TaskAdder from '../components/TaskAdder';
-import { addTask } from '../data/actions/state';
+import { postTask } from '../data/actions/api';
 
 const mapDispatchToProps = dispatch => {
     return {
-        onSubmit: (data) => dispatch(addTask(data)),
+        onSubmit: (data) => dispatch(postTask(data)),
     }
 }
 

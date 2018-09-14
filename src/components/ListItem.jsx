@@ -6,7 +6,6 @@ class ListItem extends Component {
         super(props);
         this.state = {
             detailsHidden: true,
-            completed: this.props.completed
         }
         this.handleDetailToggle = this.handleDetailToggle.bind(this);
     }
@@ -23,7 +22,7 @@ class ListItem extends Component {
         return (
             <li key={ id } className="list-group-item">
                 <div className="card-header">
-                    <button className={"btn " + (this.state.completed ? "btn-success" : "btn-light")} onClick={ onClick }>complete</button>
+                    <button className={"btn " + (this.props.completed ? "btn-success" : "btn-light")} onClick={ onClick }>complete</button>
                     <span className="card-title">{title}</span>
                     <button className="btn btn-dark" onClick={ this.handleDetailToggle }>expand</button>
                 </div>

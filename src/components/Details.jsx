@@ -22,11 +22,11 @@ class Details extends Component {
             <React.Fragment>
                 <div className="card-body">
                     <p>{ this.props.taskData.notes }</p>
-                    <p>{ moment(this.props.taskData.dueDate).calendar() }</p>
+                    { this.props.taskData.dueDate ? <p>{ moment(this.props.taskData.dueDate).calendar()}</p> : null }
                     <button onClick={ this.handleEditToggle }>Edit</button>
                     <button onClick={ this.props.taskData.onDelete }>Delete</button>
                 </div>
-                { this.state.editorHidden ? null : (<TaskEditor taskData={ this.props.taskData } />) }
+                { this.state.editorHidden ? null : (<TaskEditor taskData={ this.props.taskData } editToggle={ () => this.handleEditToggle() }/>) }
             </React.Fragment>
         ); 
     }

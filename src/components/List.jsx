@@ -18,7 +18,7 @@ class List extends Component {
                             dueDate={task.due_date}
                             completed={task.completed}
                             key={task.id}
-                            onClick={ () => this.props.onClick(task.id) }
+                            onClick={ () => this.props.onClick(task.id, task.completed) }
                             onDelete={ () => this.props.onDelete(task.id) }
                             onEdit={ this.props.onEdit }
                         />

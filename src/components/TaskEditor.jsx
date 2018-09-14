@@ -5,8 +5,8 @@ class TaskEditor extends Component {
         super(props);
         this.state = {
             titleValue: this.props.taskData.title,
-            notesValue: this.props.taskData.notes,
-            dueDateValue: this.props.taskData.dueDate,
+            notesValue: this.props.taskData.notes ? this.props.taskData.notes : "",
+            dueDateValue: this.props.taskData.dueDate ? this.props.taskData.dueDate : "",
             completedValue: this.props.taskData.completed,
         }
     }
@@ -47,6 +47,12 @@ class TaskEditor extends Component {
         }
         
         this.props.taskData.onEdit(data);
+
+        this.setState({
+            titleValue: "",
+            dueDateValue: "",
+            notesValue: ""
+        });
     }
 
     render() {
@@ -58,15 +64,11 @@ class TaskEditor extends Component {
                 </div>
                 <div>
                     <label htmlFor="duedate" className="form-text">Due Date</label>
-                    <input id="duedate" type="" className="form-control" onChange={ (e) => this.handleDueDateChange(e) }value={ this.state.dueDateValue } />
+                    <input id="duedate" type="" className="form-control" onChange={ (e) => this.handleDueDateChange(e) } value={ this.state.dueDateValue } />
                 </div>
                 <div>
                     <label htmlFor="notes" className="form-text">Notes</label>
                     <input id="notes" type="text" className="form-control" onChange={ (e) => this.handleNotesChange(e) } value={ this.state.notesValue } />
-                </div>
-                <div>
-                    <span className="form-text">Completed</span>
-                    <button type="button" id="completed" onChange={ (e) => this.handleCompletedChange(e) } value={ this.state.completedValue } />
                 </div>
                 <button type="submit" className="btn btn-primary">Edit Task</button>
             </form>

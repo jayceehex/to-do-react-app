@@ -1,7 +1,6 @@
 import { connect } from 'react-redux';
 import List from '../components/List';
-import { completeTask, deleteTask, editTask } from '../data/actions/state';
-import { getTasks } from '../data/actions/api';
+import { getTasks, deleteTask, patchTask, putTask } from '../data/actions/api';
 
 const mapStateToProps = (state) => {
     return {
@@ -12,9 +11,9 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
     return {
         onLoad: () => dispatch(getTasks()),
-        onClick: (id) => dispatch(completeTask(id)),
+        onClick: (id, isCompleted) => dispatch(patchTask(id, isCompleted)),
         onDelete: (id) => dispatch(deleteTask(id)),
-        onEdit: (data) => dispatch(editTask(data))
+        onEdit: (data) => dispatch(putTask(data))
     }
 }
 
