@@ -64,7 +64,7 @@ class TaskEditor extends Component {
                 </div>
                 <div className="form-group">
                     <label htmlFor="duedate" className="form-text">Due Date</label>
-                    <input id="duedate" type="" className="form-control" onChange={ (e) => this.handleDueDateChange(e) } value={ this.state.dueDateValue } />
+                    <input id="duedate" type="date" className="form-control" onChange={ (e) => this.handleDueDateChange(e) } value={ this.state.dueDateValue } />
                 </div>
                 <div className="form-group">
                     <label htmlFor="notes" className="form-text">Notes</label>

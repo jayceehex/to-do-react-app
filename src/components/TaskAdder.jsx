@@ -57,7 +57,7 @@ class TaskAdder extends Component {
                 </div>
                 <div className="form-group">
                     <label htmlFor="duedate">Due Date</label>
-                    <input id="duedate" type="" className="form-control" onChange={ this.handleDueDateChange } value={ this.state.dueDateValue } />
+                    <input id="duedate" type="date" className="form-control" onChange={ this.handleDueDateChange } value={ this.state.dueDateValue } />
                 </div>
                 <div className="form-group">
                     <label htmlFor="notes">Notes</label>

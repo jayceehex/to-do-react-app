@@ -22,7 +22,7 @@ class Details extends Component {
             <React.Fragment>
                 <div className="">
                     <p>{ this.props.taskData.notes }</p>
-                    { this.props.taskData.dueDate ? <p>{ moment(this.props.taskData.dueDate).calendar()}</p> : null }
+                    { this.props.taskData.dueDate ? <p className="text-muted">{ moment(this.props.taskData.dueDate).calendar()}</p> : null }
                     <div className="btn-group">
                         <button className="btn btn-outline-secondary" onClick={ this.handleEditToggle }>Edit</button>
                         <button className="btn btn-outline-danger" onClick={ this.props.taskData.onDelete }>Delete</button>
